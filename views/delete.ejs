@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Images</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Admin Dashboard</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="/admin/upload">Upload Image</a></li>
+        <li><a href="/admin/delete-images">Delete Image</a></li>
+        <li><a href="/admin">Sign In</a></li>
+        <li><a href="/admin/logout">Sign Out</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="header">
+        <h1>Delete Images</h1>
+      </div>
+      <div class="content">
+        <div class="gallery">
+          <% images.forEach(function(image) { %>
+          <div class="image-item">
+            <img src="<%= image.img_url %>" alt="Image" />
+            <form method="POST" action="/admin/delete/<%= image.id %>">
+              <button type="submit" class="delete-button">Delete</button>
+            </form>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

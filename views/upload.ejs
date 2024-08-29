@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Admin Dashboard</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="/admin/upload">Upload Image</a></li>
+        <li><a href="/admin/delete-images">Delete Image</a></li>
+        <li><a href="/admin">Sign In</a></li>
+        <li><a href="/admin/logout">Sign Out</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="header">
+        <h1>Upload an Image</h1>
+      </div>
+      <div class="content">
+        <form
+          method="POST"
+          enctype="multipart/form-data"
+          action="/admin/upload"
+        >
+          <div class="input-group upload-dir">
+            <input
+              type="text"
+              id="uploadDir"
+              name="uploadDir"
+              placeholder="uploads/"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="file-upload" class="custom-file-upload"
+              >Choose File</label
+            >
+            <input id="file-upload" type="file" name="image" required />
+          </div>
+          <button type="submit" class="upload-button">Upload</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

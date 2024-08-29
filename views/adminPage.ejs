@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="../static/css/admin.css" />
+  <body>
+    <div class="wrapper">
+      <form method="POST">
+        <h2>Login</h2>
+
+        <div class="input-field">
+          <input id="username" name="username" type="text" required />
+          <label>Enter your Username</label>
+        </div>
+        <div class="input-field">
+          <input id="password" name="password" type="password" required />
+          <label>Enter your Password</label>
+        </div>
+        <div class="forget">
+          <label for="remember">
+            <input type="checkbox" id="remember" />
+            <p>Remember me</p>
+          </label>
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </body>
+</html>
